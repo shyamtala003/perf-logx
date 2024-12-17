@@ -1,0 +1,22 @@
+{
+  "name": "perf-logx",
+  "version": "1.0.0",
+  "description": "A customizable performance logger for HTTP requests in Express",
+  "main": "logger.js",
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "performance",
+    "logger",
+    "express",
+    "middleware"
+  ],
+  "author": "Shyam Tala",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}
