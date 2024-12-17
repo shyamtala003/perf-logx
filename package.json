@@ -1,7 +1,7 @@
 {
   "name": "perf-logx",
-  "version": "1.0.0",
-  "description": "A customizable performance logger for HTTP requests in Express",
+  "version": "1.0.1",
+  "description": "A customizable and light weight performance logger for HTTP requests in Node.js",
   "main": "logger.js",
   "scripts": {
     "test": "echo \"No tests yet\" && exit 0"
@@ -12,10 +12,9 @@
     "express",
     "middleware"
   ],
-  "author": "Shyam Tala",
+  "author": "Your Name",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {},
+  "homepage": "https://github.com/shyamtala003/perf-logx",
   "publishConfig": {
     "access": "public"
   }
