@@ -11,7 +11,7 @@ A lightweight Express middleware to log HTTP requests and responses with colored
 ## Installation
 
 ```bash
-npm install performance-logger
+npm i perf-logx
 ```
 
 ## Usage
