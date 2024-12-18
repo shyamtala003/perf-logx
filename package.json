@@ -2,7 +2,7 @@
   "name": "perf-logx",
   "version": "1.0.1",
   "description": "A customizable and light weight performance logger for HTTP requests in Node.js",
-  "main": "logger.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"No tests yet\" && exit 0"
   },

@@ -69,30 +69,36 @@ const performanceLogger = (options = {}) => {
 function getMethodColor(method) {
   switch (method) {
     case "GET":
-      return "\x1b[32m"; // Green
+      return "\x1b[38;2;128;255;128m";
+    case "HEAD":
+      return "\x1b[38;2;128;255;128m";
     case "POST":
-      return "\x1b[34m"; // Blue
+      return "\x1b[38;2;255;255;128m";
     case "PUT":
-      return "\x1b[33m"; // Yellow
+      return "\x1b[38;2;128;128;255m";
+    case "PATCH":
+      return "\x1b[38;2;128;255;255m";
     case "DELETE":
-      return "\x1b[31m"; // Red
+      return "\x1b[1;38;2;255;128;128m";
+    case "OPTIONS":
+      return "\x1b[38;2;255;128;255m";
     default:
-      return "\x1b[0m";
+      return "\x1b[38;2;255;255;255m";
   }
 }
 
 // Helper: Assign color for status codes
 function getStatusColor(statusCode) {
-  if (statusCode >= 200 && statusCode < 300) return "\x1b[32m"; // Green
-  if (statusCode >= 300 && statusCode < 400) return "\x1b[36m"; // Cyan
-  if (statusCode >= 400 && statusCode < 500) return "\x1b[33m"; // Yellow
-  if (statusCode >= 500) return "\x1b[31m"; // Red
-  return "\x1b[0m";
+  if (statusCode >= 200 && statusCode < 300) return "\x1b[1;38;2;128;255;128m";
+  if (statusCode >= 300 && statusCode < 400) return "\x1b[1;38;2;128;128;255m";
+  if (statusCode >= 400 && statusCode < 500) return "\x1b[1;38;2;255;128;128m";
+  if (statusCode >= 500) return "\x1b[48;2;255;128;128m";
+  return "\x1b[38;2;255;255;255m";
 }
 
 // Helper: Assign color for paths
-function getPathColor(path) {
-  return "\x1b[36m"; // Cyan
+function getPathColor() {
+  return "\x1b[38;2;255;255;255m";
 }
 
 module.exports = performanceLogger;
