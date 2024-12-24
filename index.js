@@ -12,6 +12,16 @@ const performanceLogger = (options = {}) => {
   return (req, res, next) => {
     const start = Date.now();
 
+    // Function to determine the IP address
+    const getClientIP = (req) => {
+      const forwarded = req.headers["x-forwarded-for"];
+      return forwarded
+        ? forwarded.split(",")[0].trim()
+        : req.connection?.remoteAddress ||
+            req.socket?.remoteAddress ||
+            "Unknown IP";
+    };
+
     // Log incoming request details
     if (logIncoming) {
       let logMessage = "";
@@ -25,7 +35,7 @@ const performanceLogger = (options = {}) => {
       }
 
       if (logIP) {
-        logMessage += `from ${req.ip} `;
+        logMessage += `from ${getClientIP(req)} `;
       }
 
       if (logUserAgent) {
